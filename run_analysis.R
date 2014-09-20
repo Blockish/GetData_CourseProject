@@ -5,7 +5,7 @@
 ## at https://github.com/Blockish/GetData_CourseProject
 
 ## Require packages that will be used to merge and transform the datasets
-require("dplyr")
+require("plyr")
 
 ## Read in Data files for project
         ## Start with Activity labels and Features 
