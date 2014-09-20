@@ -1,5 +1,46 @@
-## Getting and Cleaning Data Course Project 
-# Variables and Analysis methods used in Project.
+# GetData_CourseProject - CookBook.md
+# =====================
+
+
+This file contains a list of variable names and descriptions used in the Getting and Cleaning Data Course Project and a synopsis of the methods used in the analysis.
+
+## Sources
+Original Source of Data (and information about variables): http://archive.ics.uci.edu/ml/datasets/Human+Activity+Recognition+Using+Smartphones  
+
+Dataset on Coursera:  https://d396qusza40orc.cloudfront.net/getdata%2Fprojectfiles%2FUCI%20HAR%20Dataset.zip
+
+## Structure of original data files
+
+(Description from the features_info.txt included in the UCI HAR Dataset)
+Subsequently, the body linear acceleration and angular velocity were derived in time to obtain Jerk signals (tBodyAccJerk-XYZ and tBodyGyroJerk-XYZ). Also the magnitude of these three-dimensional signals were calculated using the Euclidean norm (tBodyAccMag, tGravityAccMag, tBodyAccJerkMag, tBodyGyroMag, tBodyGyroJerkMag). 
+
+Finally a Fast Fourier Transform (FFT) was applied to some of these signals producing fBodyAcc-XYZ, fBodyAccJerk-XYZ, fBodyGyro-XYZ, fBodyAccJerkMag, fBodyGyroMag, fBodyGyroJerkMag. (Note the 'f' to indicate frequency domain signals). 
+
+These signals were used to estimate variables of the feature vector for each pattern:  
+'-XYZ' is used to denote 3-axial signals in the X, Y and Z directions.
+
+tBodyAcc-XYZ
+tGravityAcc-XYZ
+tBodyAccJerk-XYZ
+tBodyGyro-XYZ
+tBodyGyroJerk-XYZ
+tBodyAccMag
+tGravityAccMag
+tBodyAccJerkMag
+tBodyGyroMag
+tBodyGyroJerkMag
+fBodyAcc-XYZ
+fBodyAccJerk-XYZ
+fBodyGyro-XYZ
+fBodyAccMag
+fBodyAccJerkMag
+fBodyGyroMag
+fBodyGyroJerkMag
+
+The set of variables that were estimated from these signals are: 
+
+mean(): Mean value
+std(): Standard deviation
 
 ## This script will merge the training and test components (data, labels, subjects, etc.) 
 ## of the UCI HAR Dataset into one complete tidy dataset, then creates a 2nd independent
