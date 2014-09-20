@@ -79,17 +79,14 @@ The script will merge the training and test components (data, labels, subjects, 
 1.  load required packages, plyr
 2.  use read.table to read in Data files for project, activity labels, features, subject ID's and observation data from the test and training sets.  Note: Use "stingsAsFactors=FALSE" to avoid all the variables from being stored as factors.  Also, note there are no headers in these data files (header = FALSE)
 3. using the structure of the original data files (See discussion of this above, along with a link to a great diagram from David Hood showing a visual version, join them together.
-   a. First, rbind.data.frame the subjID's from test and training (in that order)  
-   b. Second, y values using rbind.data.frame from test and training (in that order to ensure dimensions will match from above.)
-   c. Third, do the same for the X, test and training (in that order)
-   d. Fourth, attach the feature names to columns for data set... (Note, this must be done here to match the dimensions of the features with the observed data...)
-   e. Fifth, join the subjectID, activityID, and labeled XData together into 1 dataframe using cbind.data.frame
+3. a. First, rbind.data.frame the subjID's from test and training (in that order)  
+3. b. Second, y values using rbind.data.frame from test and training (in that order to ensure dimensions will match from above.)
+3. c. Third, do the same for the X, test and training (in that order)
+3. d. Fourth, attach the feature names to columns for data set... (Note, this must be done here to match the dimensions of the features with the observed data...)
+3. e. Fifth, join the subjectID, activityID, and labeled XData together into 1 dataframe using cbind.data.frame
 4. convert the actID to a factor variable and add the Activity "friendly name" labels.
 5. convert subID to a factor variable for later use
-6. grep the columns for ones related to mean or std...  
-
-**Note, on this one, I explicity excluded columns for angle*Mean values, since they did not appear to be the same type of mean calculation.**  
-
+6. grep the columns for ones related to mean or std...  **Note, on this one, I explicity excluded columns for angle*Mean values, since they did not appear to be the same type of mean calculation.**  
 7. extract the columns from above from the original dataset and include the subject ID's and activity ID's columns, into a new dataframe.  
 8. Add friendly names
 9. calculate the mean for each subject for each activity using ddply and numcolwise(mean) functions (grouping data by subjectID and activity_name) and put the results into the final dataframe, tidy_final.
