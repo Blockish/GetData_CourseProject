@@ -69,5 +69,12 @@ colnames(filtered)[1] <- "subjectID"
 ## use ddply to average each column by each subject and activity name
 tidy_final <- ddply(filtered, .(subjectID, activity_name), numcolwise(mean))
 
+## Update column names to prepend an "m" to indicate the value is the mean calculated 
+## for that subject/activity observation 
+tmp <- paste("m", colnames(tidy_final[3:81]), sep="")
+tmp2 <- c("subjectID", "activity_name", tmp)
+colnames(tidy_final) <- tmp2
+
+
 ## write-out the final tidy data file (NOTE: must read in with header=TRUE, .txt and sep=" " to get correct table)
 write.table(tidy_final, file="tfinal.txt", row.name=FALSE)
